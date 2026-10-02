@@ -16,6 +16,60 @@
 
   <!-- Aquí va tu contenido -->
 
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <div class="container">
+      <a class="navbar-brand" href="#"><i class="bi bi-code-slash"></i> DWEC - [Tu Nombre y Apellidos]</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Navegadores</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="interaccion.html">Interacción JS</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenido principal -->
+  <main class="container my-4">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8">
+        
+        <div class="card">
+          <div class="card-header bg-dark text-white">
+            <h1 class="h4 mb-0"><i class="bi bi-terminal"></i> Panel de Interacción JavaScript</h1>
+          </div>
+          <div class="card-body">
+            <p class="card-text">Presiona los siguientes botones para ejecutar cada función e interactuar con los eventos y trazas en la consola del navegador:</p>
+            
+            <div class="d-grid gap-3 col-12 mx-auto">
+              <button type="button" class="btn btn-primary btn-lg" onclick="saludar()">
+                <i class="bi bi-hand-index-thumb"></i> Saludar
+              </button>
+              
+              <button type="button" class="btn btn-warning btn-lg" onclick="simularError()">
+                <i class="bi bi-exclamation-octagon"></i> Simular un error
+              </button>
+              
+              <button type="button" class="btn btn-info btn-lg text-white" onclick="queNavegadorSoy()">
+                <i class="bi bi-laptop"></i> ¿Qué navegador soy?
+              </button>
+            </div>
+          </div>
+          <div class="card-footer text-muted">
+            Abre la consola de desarrollador (F12) para examinar la salida registrada.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
   <!-- JS de Bootstrap (navbar que se pliega, modales, dropdowns...). Al final del body -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
