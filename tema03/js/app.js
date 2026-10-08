@@ -20,14 +20,25 @@ function ejercicio1() {
   const edad = 20;   // number
   console.log("edad =", edad, "→", typeof edad);
 
-  // Declaracion de variables: string, boolean, null, undefined y bigint (como 10n).
-  const nombre = "Christian";        // string
-  const esEstudiante = true;         // boolean
-  const valorNulo = null;      // null
+  // Declaracion de variables: string, boolean, null, bigint y undefined (como 10n).
+  const nombre = "Christian";
+  const esEstudiante = true;
+  const valorNulo = null;
   const identificador = 100n;  // bigint
   let asignaturaPendiente;  // undefined
-}
 
+
+// Muestra en consola cada variable
+  console.log("nombre =", nombre, "→", typeof nombre);
+  console.log("esEstudiante =", esEstudiante, "→", typeof esEstudiante);
+  console.log("valorNulo =", valorNulo, "→", typeof valorNulo);
+  console.log("identificador =", identificador, "→", typeof identificador);
+  console.log("asignaturaPendiente (inicial) =", asignaturaPendiente, "→", typeof asignaturaPendiente);
+
+  // Valor para la variable let y comprobacion de su nuevo tipo
+  asignaturaPendiente = "DWEC";
+  console.log("asignaturaPendiente (tras reasignar) =", asignaturaPendiente, "→", typeof asignaturaPendiente);
+}
 
 // Ejercicio 2 · Conversiones explícitas
 // Escribe el comentario «espero …» ANTES de ejecutar. Si fallas, no lo cambies: márcalo en la tabla de la página.
