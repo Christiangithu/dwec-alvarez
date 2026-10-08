@@ -1,5 +1,5 @@
 /*
-  Tarea 3 · DWEC · [Tu nombre y apellidos]
+  Tarea 3 · DWEC · Christian Alvarez
   Variables, tipos y conversiones.
 
   Cómo usar esta plantilla:
@@ -20,10 +20,12 @@ function ejercicio1() {
   const edad = 20;   // number
   console.log("edad =", edad, "→", typeof edad);
 
-  // TODO: declara una variable de cada tipo que falta: string, boolean, null, undefined y bigint (como 10n).
-  //       const si no va a cambiar; let para al menos una a la que des valor más tarde.
-  // TODO: muestra en la consola el valor y el typeof de cada una, como en el ejemplo.
-  // TODO: da valor a tu variable let y vuelve a mostrar su typeof.
+  // Declaracion de variables: string, boolean, null, undefined y bigint (como 10n).
+  const nombre = "Christian";        // string
+  const esEstudiante = true;         // boolean
+  const valorNulo = null;      // null
+  const identificador = 100n;  // bigint
+  let asignaturaPendiente;  // undefined
 }
 
 
