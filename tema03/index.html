@@ -167,7 +167,8 @@
 
           const h = Boolean("");     // espero false
           console.log('Boolean("") →', h, typeof h);
-        }</code>
+          }
+          </code>
         </pre>
 
         <!-- 3) La tabla «Conversión / Espero / Sale» -->
@@ -194,6 +195,83 @@
       <div class="card-footer">
         <button type="button" class="btn btn-primary" onclick="ejercicio2()">
           <i class="bi bi-play-fill"></i> Ejecutar ejercicio 2
+        </button>
+        <span class="small text-body-secondary ms-2">El resultado sale en la consola (F12).</span>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EJERCICIO 3 · Coerción y comparaciones
+         ============================================================ -->
+    <section class="card mb-4 shadow-sm">
+
+      <!-- 1) Título del ejercicio -->
+      <div class="card-header d-flex align-items-center gap-2">
+        <span class="badge text-bg-primary">Ejercicio 3</span>
+        <h2 class="h5 mb-0">Coerción y comparaciones</h2>
+      </div>
+
+      <div class="card-body">
+
+      <!-- 2) El código -->
+      <pre class="bg-dark text-light p-3 rounded small mb-4">
+        <code>
+        function ejercicio3() {
+        console.log("--- Ejercicio 3 · Coerción y comparaciones ---");
+
+        // Ejemplo: una expresión que mezcla tipos
+        console.log('"5" - 2 →', "5" - 2);   // espero 3
+
+        // Cinco expresiones que mezclen tipos
+        console.log('"5" + 2 →', "5" + 2);        // espero "52"
+        console.log('"10" * "3" →', "10" * "3");  // espero 30
+        console.log('true + 5 →', true + 5);      // espero 6
+        console.log('"Pepe" - 2 →', "Pepe" - 2);  // espero NaN
+        console.log('false == 0 →', false == 0);  // espero true
+
+        // Ejemplo: la misma pareja comparada con == y con ===
+        console.log('5 == "5" →', 5 == "5");     // espero true
+        console.log('5 === "5" →', 5 === "5");   // espero false
+
+        // Ejemplo con 0 y false
+        console.log('0 == false →', 0 == false);   // espero true
+        console.log('0 === false →', 0 === false); // espero false
+
+        // Ejemplo con null y undefined
+        console.log('null == undefined →', null == undefined);   // espero true
+        console.log('null === undefined →', null === undefined); // espero false
+        }
+        </code>
+      </pre>
+
+        <!-- 3) La tabla «Expresión / Espero / Sale» -->
+        <div class="table-responsive">
+          <table class="table table-sm table-striped align-middle mb-2">
+            <thead class="table-primary">
+              <tr><th scope="col">Expresión / Comparación</th><th scope="col">Espero</th><th scope="col">Sale</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row"><code>"5" - 2</code></th><td><code>3</code></td><td><code>3</code></td></tr>
+              <tr><th scope="row"><code>"5" + 2</code></th><td><code>"52"</code></td><td><code>"52"</code></td></tr>
+              <tr><th scope="row"><code>"10" * "3"</code></th><td><code>30</code></td><td><code>30</code></td></tr>
+              <tr><th scope="row"><code>true + 5</code></th><td><code>6</code></td><td><code>6</code></td></tr>
+              <tr><th scope="row"><code>"Hola" - 2</code></th><td><code>NaN</code></td><td><code>NaN</code></td></tr>
+              <tr><th scope="row"><code>false == 0</code></th><td><code>true</code></td><td><code>true</code></td></tr>
+              <tr><th scope="row"><code>5 == "5" vs 5 === "5"</code></th><td><code>true / false</code></td><td><code>true / false</code></td></tr>
+              <tr><th scope="row"><code>0 == false vs 0 === false</code></th><td><code>true / false</code></td><td><code>true / false</code></td></tr>
+              <tr><th scope="row"><code>null == undefined vs null === undefined</code></th><td><code>true / false</code></td><td><code>true / false</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 4) Explicación sobre coerción -->
+        <p class="small mb-0"><strong>Regla de coerción:</strong> La cadena manda únicamente cuando se utiliza el operador <code>+</code> (actúa como concatenador), con los demás operadores aritméticos (<code>-</code>, <code>*</code>, <code>/</code>) manda el número, intentando convertir las cadenas a tipo numérico.</p>
+      </div>
+
+      <!-- 5) El botón -->
+      <div class="card-footer">
+        <button type="button" class="btn btn-primary" onclick="ejercicio3()">
+          <i class="bi bi-play-fill"></i> Ejecutar ejercicio 3
         </button>
         <span class="small text-body-secondary ms-2">El resultado sale en la consola (F12).</span>
       </div>

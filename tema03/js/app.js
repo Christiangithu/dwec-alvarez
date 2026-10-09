@@ -77,16 +77,28 @@ function ejercicio3() {
   console.log("--- Ejercicio 3 · Coerción y comparaciones ---");
 
   // Ejemplo: una expresión que mezcla tipos
-  console.log('"5" - 2 →', "5" - 2);   // espero [tu predicción]
+  console.log('"5" - 2 →', "5" - 2);   // espero 3
 
-  // TODO: cinco expresiones más que mezclen tipos (al menos dos inventadas por ti), cada una con su «espero …».
+  // Cinco expresiones que mezclen tipos
+  console.log('"5" + 2 →', "5" + 2);        // espero "52"
+  console.log('"10" * "3" →', "10" * "3");  // espero 30
+  console.log('true + 5 →', true + 5);      // espero 6
+  console.log('"Pepe" - 2 →', "Pepe" - 2);  // espero NaN
+  console.log('false == 0 →', false == 0);  // espero true
 
   // Ejemplo: la misma pareja comparada con == y con ===
-  console.log('5 == "5" →', 5 == "5");     // espero [tu predicción]
-  console.log('5 === "5" →', 5 === "5");   // espero [tu predicción]
+  console.log('5 == "5" →', 5 == "5");     // espero true
+  console.log('5 === "5" →', 5 === "5");   // espero false
 
-  // TODO: haz lo mismo con 0 y false, y con null y undefined.
+  // Ejemplo con 0 y false
+  console.log('0 == false →', 0 == false);   // espero true
+  console.log('0 === false →', 0 === false); // espero false
+
+  // Ejemplo con null y undefined
+  console.log('null == undefined →', null == undefined);   // espero true
+  console.log('null === undefined →', null === undefined); // espero false
 }
+
 
 
 // Ejercicio 4 · Tu ficha con plantillas de cadena
