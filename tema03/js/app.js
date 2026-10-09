@@ -124,7 +124,7 @@ function ejercicio4() {
   console.log("Ficha:", ficha);
 
   //Ficha concatenada
-  const fichaConMas = "Soy " + nombre + ", estudio " + ciclo + " (" + curso + "), mis aficiónes son " + aficion + " y esta semana he estudiado " + horasEstudio + " horas.";
+  const fichaConMas = "Soy " + nombre + ", estudio " + ciclo + " (" + curso + "), mis aficiónes son " + aficion + ", esta semana he estudiado " + horasEstudio + " horas.";
   console.log("Ficha con operador +:", fichaConMas);
 
   //Comparación con ===
