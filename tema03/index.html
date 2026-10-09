@@ -59,26 +59,26 @@
         <!-- 2) El código: cuando termines, copia aquí tu función ejercicio1() de js/app.js.
                 Si tu código lleva los signos < o >, escríbelos como &lt; y &gt; -->
         <pre class="bg-dark text-light p-3 rounded small mb-4"><code>function ejercicio1() {
-  console.log("--- Ejercicio 1 · Variables y typeof ---");
+          console.log("--- Ejercicio 1 · Variables y typeof ---");
 
-  const edad = 20;   // number
-  console.log("edad =", edad, "→", typeof edad);
+          const edad = 20;   // number
+          console.log("edad =", edad, "→", typeof edad);
 
-  const nombre = "Christian";
-  const esEstudiante = true;
-  const valorNulo = null;
-  const identificador = 100n;
-  let asignaturaPendiente;
+          const nombre = "Christian";
+          const esEstudiante = true;
+          const valorNulo = null;
+          const identificador = 100n;
+          let asignaturaPendiente;
 
-  console.log("nombre =", nombre, "→", typeof nombre);
-  console.log("esEstudiante =", esEstudiante, "→", typeof esEstudiante);
-  console.log("valorNulo =", valorNulo, "→", typeof valorNulo);
-  console.log("identificador =", identificador, "→", typeof identificador);
-  console.log("asignaturaPendiente (inicial) =", asignaturaPendiente, "→", typeof asignaturaPendiente);
+          console.log("nombre =", nombre, "→", typeof nombre);
+          console.log("esEstudiante =", esEstudiante, "→", typeof esEstudiante);
+          console.log("valorNulo =", valorNulo, "→", typeof valorNulo);
+          console.log("identificador =", identificador, "→", typeof identificador);
+          console.log("asignaturaPendiente (inicial) =", asignaturaPendiente, "→", typeof asignaturaPendiente);
 
-  asignaturaPendiente = "DWEC";
-  console.log("asignaturaPendiente (tras reasignar) =", asignaturaPendiente, "→", typeof asignaturaPendiente);
-}</code></pre>
+          asignaturaPendiente = "DWEC";
+          console.log("asignaturaPendiente (tras reasignar) =", asignaturaPendiente, "→", typeof asignaturaPendiente);
+        }</code></pre>
 
         <!-- 3) La tabla «Espero / Sale», rellenada a mano.
                 Una fila por variable. Si te equivocas, añade en la columna «Sale» el badge:
@@ -100,7 +100,7 @@
         </div>
 
         <!-- 4) Tu explicación -->
-        <p class="small mb-0"><strong>El caso de null:</strong> [explica en una línea qué pasa con typeof null]</p>
+        <p class="small mb-0"><strong>El caso de null:</strong> Devuelve <code>"object"</code> Debido a un error histórico de las primeras versiones de JavaScript que se conserva por compatibilidad.</p>
       </div>
 
       <!-- 5) El botón. onclick="ejercicio1()" hace que, al pulsarlo, se ejecute la función ejercicio1() de js/app.js.
