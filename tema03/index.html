@@ -51,7 +51,7 @@
       <!-- 1) Título del ejercicio -->
       <div class="card-header d-flex align-items-center gap-2">
         <span class="badge text-bg-primary">Ejercicio 1</span>
-        <h2 class="h5 mb-0">Variables y typeof</h2>
+        <h5 class="mb-0">Variables y typeof</h5>
       </div>
       <div class="card-body">
 
@@ -134,7 +134,7 @@
       <!-- 1) Título del ejercicio -->
       <div class="card-header d-flex align-items-center gap-2">
         <span class="badge text-bg-primary">Ejercicio 2</span>
-        <h2 class="h5 mb-0">Conversiones explícitas</h2>
+        <h5 class="mb-0">Conversiones explícitas</h5>
       </div>
       <div class="card-body">
 
@@ -208,7 +208,7 @@
       <!-- 1) Título del ejercicio -->
       <div class="card-header d-flex align-items-center gap-2">
         <span class="badge text-bg-primary">Ejercicio 3</span>
-        <h2 class="h5 mb-0">Coerción y comparaciones</h2>
+        <h5 class="mb-0">Coerción y comparaciones</h5>
       </div>
 
       <div class="card-body">
@@ -274,6 +274,84 @@
           <i class="bi bi-play-fill"></i> Ejecutar ejercicio 3
         </button>
         <span class="small text-body-secondary ms-2">El resultado sale en la consola (F12).</span>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EJERCICIO 4 · Tu ficha con plantillas de cadena
+         ============================================================ -->
+    <section class="card mb-4 shadow-sm">
+
+      <!-- 1) Título del ejercicio -->
+      <div class="card-header d-flex align-items-center gap-2">
+        <span class="badge text-bg-primary">Ejercicio 4</span>
+        <h5 class="mb-0">Tu ficha con plantillas de cadena</h5>
+      </div>
+
+      <div class="card-body">
+
+        <!-- 2) El código -->
+        <pre class="bg-dark text-light p-3 rounded small mb-4">
+          <code>
+          function ejercicio4() {
+          console.log("--- Ejercicio 4 · Tu ficha con plantillas de cadena ---");
+
+          // Tus datos, con const
+          // Tus datos con const
+          const nombre = "Christian Alvarez";
+          const ciclo = "Desarrollo de Aplicaciones Web";
+          const curso = "2.º DAW";
+          const aficion = "senderismo y viajar";
+
+          // Un dato que cambia, con let
+          let horasEstudio = 30;
+          horasEstudio += 5; 
+
+          // La ficha con plantilla de cadena: backticks (`) y ${ }
+          const ficha = `Soy ${nombre}, estudio ${ciclo} (${curso}), mis aficiónes son ${aficion}, esta semana he estudiado ${horasEstudio} horas.`;
+
+          // Muestra con alert() y en la consola
+          alert(ficha);
+          console.log("Ficha:", ficha);
+
+          //Ficha concatenada
+          const fichaConMas = "Soy " + nombre + ", estudio " + ciclo + " (" + curso + "), mis aficiónes son " + aficion + " y esta semana he estudiado " + horasEstudio + " horas.";
+          console.log("Ficha con operador +:", fichaConMas);
+
+          //Comparación con ===
+          const sonIguales = ficha === fichaConMas;
+          console.log("Son iguales? (ficha === fichaConMas):", sonIguales);
+          }
+          </code>
+        </pre>
+
+        <!-- 3) Muestra de comparación entre ambas fichas -->
+        <div class="table-responsive">
+          <table class="table table-sm table-striped align-middle mb-3">
+            <thead class="table-primary">
+              <tr><th scope="col">Método</th><th scope="col">Resultado de la comparación (===)</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Plantilla de cadena (<code>`... ${}`</code>) vs Concatenación (<code>+</code>)</th><td><code>true</code> (Producen la misma cadena exacta)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 4) El error de la const en una alerta de Bootstrap -->
+        <div class="alert alert-danger mb-0" role="alert">
+          <h3 class="h6 alert-heading mb-1"><i class="bi bi-exclamation-triangle-fill me-1"></i> Error al reasignar una constante (const)</h3>
+          <p class="small font-monospace mb-1">Uncaught TypeError: Assignment to constant variable.</p>
+          <hr class="my-2">
+          <p class="small mb-0"><strong>Explicación:</strong> Las variables declaradas con <code>const</code> son constantes de solo lectura, una vez que se les asigna un valor inicial durante su declaración, JavaScript impide que se vuelva a cambiar o reasignar dicho valor mediante un operador de igualdad.</p>
+        </div>
+      </div>
+
+      <!-- 5) El boton -->
+      <div class="card-footer">
+        <button type="button" class="btn btn-primary" onclick="ejercicio4()">
+          <i class="bi bi-play-fill"></i> Ejecutar ejercicio 4
+        </button>
+        <span class="small text-body-secondary ms-2">Muestra una alerta (alert) y detalles en la consola (F12).</span>
       </div>
     </section>
 
