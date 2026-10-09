@@ -53,12 +53,13 @@
         <span class="badge text-bg-primary">Ejercicio 1</span>
         <h2 class="h5 mb-0">Variables y typeof</h2>
       </div>
-
       <div class="card-body">
 
         <!-- 2) El código: cuando termines, copia aquí tu función ejercicio1() de js/app.js.
                 Si tu código lleva los signos < o >, escríbelos como &lt; y &gt; -->
-        <pre class="bg-dark text-light p-3 rounded small mb-4"><code>function ejercicio1() {
+        <pre class="bg-dark text-light p-3 rounded small mb-4">
+          <code>
+          function ejercicio1() {
           console.log("--- Ejercicio 1 · Variables y typeof ---");
 
           const edad = 20;   // number
@@ -78,7 +79,8 @@
 
           asignaturaPendiente = "DWEC";
           console.log("asignaturaPendiente (tras reasignar) =", asignaturaPendiente, "→", typeof asignaturaPendiente);
-        }</code></pre>
+        }</code>
+        </pre>
 
         <!-- 3) La tabla «Espero / Sale», rellenada a mano.
                 Una fila por variable. Si te equivocas, añade en la columna «Sale» el badge:
@@ -125,6 +127,77 @@
                Ejercicio 4 → tu ficha, y el error de la const dentro de un <div class="alert alert-danger">
            · el botón: onclick="ejercicio2()", onclick="ejercicio3()"…
          ============================================================ -->
+
+    <!-- EJERCICIO 2 · Conversiones explícitas -->
+    <section class="card mb-4 shadow-sm">
+
+      <!-- 1) Título del ejercicio -->
+      <div class="card-header d-flex align-items-center gap-2">
+        <span class="badge text-bg-primary">Ejercicio 2</span>
+        <h2 class="h5 mb-0">Conversiones explícitas</h2>
+      </div>
+      <div class="card-body">
+
+        <!-- 2) El código -->
+        <pre class="bg-dark text-light p-3 rounded small mb-4">
+          <code>
+          function ejercicio2() {
+          console.log("--- Ejercicio 2 · Conversiones explícitas ---");
+
+          const a = String(123);   // espero 123 como String
+          console.log("String(123) →", a, typeof a);
+
+          const b = Number("123");   // espero 123
+          console.log('Number("123") →', b, typeof b);
+
+          const c = Number("12abc"); // espero 12 pero falla, sale NaN
+          console.log('Number("12abc") →', c, typeof c);
+
+          const d = Number("");      // espero NaN pero falla, sale 0
+          console.log('Number("") →', d, typeof d);
+
+          const e = Number(true);    // espero 1
+          console.log('Number(true) →', e, typeof e);
+
+          const f = Boolean(0);      // espero false
+          console.log('Boolean(0) →', f, typeof f);
+
+          const g = Boolean("texto"); // espero true
+          console.log('Boolean("texto") →', g, typeof g);
+
+          const h = Boolean("");     // espero false
+          console.log('Boolean("") →', h, typeof h);
+        }</code>
+        </pre>
+
+        <!-- 3) La tabla «Conversión / Espero / Sale» -->
+        <div class="table-responsive">
+          <table class="table table-sm table-striped align-middle mb-2">
+            <thead class="table-primary">
+              <tr><th scope="col">Conversión</th><th scope="col">Espero</th><th scope="col">Sale</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row"><code>String(123)</code></th><td><code>"123"</code> (string)</td><td><code>"123"</code> (string)</td></tr>
+              <tr><th scope="row"><code>Number("123")</code></th><td><code>123</code> (number)</td><td><code>123</code> (number)</td></tr>
+              <tr><th scope="row"><code>Number("12abc")</code></th><td><code>12</code> (number)</td><td><code>NaN</code> (number) <span class="badge text-bg-danger">Fallé</span></td></tr>
+              <tr><th scope="row"><code>Number("")</code></th><td><code>NaN</code> (number)</td><td><code>0</code> (number) <span class="badge text-bg-danger">Fallé</span></td></tr>
+              <tr><th scope="row"><code>Number(true)</code></th><td><code>1</code> (number)</td><td><code>1</code> (number)</td></tr>
+              <tr><th scope="row"><code>Boolean(0)</code></th><td><code>false</code> (boolean)</td><td><code>false</code> (boolean)</td></tr>
+              <tr><th scope="row"><code>Boolean("texto")</code></th><td><code>true</code> (boolean)</td><td><code>true</code> (boolean)</td></tr>
+              <tr><th scope="row"><code>Boolean("")</code></th><td><code>false</code> (boolean)</td><td><code>false</code> (boolean)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 5) El boton -->
+      <div class="card-footer">
+        <button type="button" class="btn btn-primary" onclick="ejercicio2()">
+          <i class="bi bi-play-fill"></i> Ejecutar ejercicio 2
+        </button>
+        <span class="small text-body-secondary ms-2">El resultado sale en la consola (F12).</span>
+      </div>
+    </section>
 
   </main>
 
