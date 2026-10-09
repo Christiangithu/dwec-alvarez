@@ -131,5 +131,5 @@ function ejercicio4() {
   const sonIguales = ficha === fichaConMas;
   console.log("Son iguales? (ficha === fichaConMas):", sonIguales);
 
-  // Recuerda: el error de dar otro valor a una const se provoca en la consola del navegador, no aquí.
+  // Recuerda: el error de dar otro valor a una const se provoca en la consola del navegador, no aquí...
 }
