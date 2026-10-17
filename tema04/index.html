@@ -75,10 +75,26 @@
       <section class="card mb-4 w-100">
         <div class="card-header d-flex justify-content-between align-items-center">Calculadora</div>
         <div class="card-body">
-          <!-- Cada botón llama con onclick a su función de js/app.js, como en la tarea 3 -->
-          <button type="button" class="btn btn-primary" onclick="sumar()">Sumar</button>
-          <!-- TODO: los botones Restar, Multiplicar, Dividir, Potencia y Módulo:
-                    restar(), multiplicar(), dividir(), potencia() y modulo() -->
+          <div class="row g-2">
+            <div class="col-6">
+              <button type="button" class="btn btn-primary w-100" onclick="sumar()">Sumar</button>
+            </div>
+            <div class="col-6">
+              <button type="button" class="btn btn-primary w-100" onclick="restar()">Restar</button>
+            </div>
+            <div class="col-6">
+              <button type="button" class="btn btn-primary w-100" onclick="multiplicar()">Multiplicar</button>
+            </div>
+            <div class="col-6">
+              <button type="button" class="btn btn-primary w-100" onclick="dividir()">Dividir</button>
+            </div>
+            <div class="col-6">
+              <button type="button" class="btn btn-primary w-100" onclick="potencia()">Potencia</button>
+            </div>
+            <div class="col-6">
+              <button type="button" class="btn btn-primary w-100" onclick="modulo()">Resto</button>
+            </div>
+          </div>
         </div>
       </section>
     </div>
