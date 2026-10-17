@@ -33,7 +33,8 @@
   <header class="bg-body-tertiary border-bottom py-4 mb-4">
     <div class="container">
       <h1 class="h2 mb-1">Calculadora y bucles</h1>
-      <p class="lead mb-0 text-body-secondary">[Una frase tuya sobre lo que hace la página]</p>
+      <p class="lead mb-0 text-body-secondary">Cálculos matemáticos, comparaciones lógicas y bucles for, while, do while.</p>
+      <p class="small text-body-secondary mb-0">Ingresa dos números para realizar alguna de las operaciones y los resultados también se podrán ver en consola (<kbd>F12</kbd>).</p>
     </div>
   </header>
 
@@ -41,43 +42,69 @@
 
     <!-- TODO: organiza las cards con la rejilla de Bootstrap: <div class="row"> y dentro <div class="col-12 col-lg-...">.
                En el móvil, una debajo de otra; en pantalla grande, repartidas en columnas. -->
+  <div class="row g-4">
 
+    <div class="col-12 col-lg-4 d-flex">
     <!-- LOS NÚMEROS. No cambies los id: leerNumero("numero1") y leerNumero("numero2") los buscan por su id -->
-    <section class="card mb-4">
-      <div class="card-header">Los números</div>
-      <div class="card-body">
-        <label for="numero1" class="form-label">Número 1</label>
-        <input type="number" id="numero1" class="form-control mb-3">
-        <label for="numero2" class="form-label">Número 2</label>
-        <input type="number" id="numero2" class="form-control">
-      </div>
-    </section>
+     <section class="card mb-4 w-100">
+        <div class="card-header d-flex justify-content-between align-items-center">Los números</div>
+        <div class="card-body">
+          <label for="numero1" class="form-label">Número 1</label>
+          <input type="number" id="numero1" class="form-control mb-3">
+          <label for="numero2" class="form-label">Número 2</label>
+          <input type="number" id="numero2" class="form-control">
+        </div>
+      </section>
+    </div>
 
-    <!-- RESULTADO. Aquí escriben mostrar(), anadirLinea() y anadirBadge(). No cambies el id -->
-    <section class="card mb-4">
-      <div class="card-header">Resultado</div>
-      <div class="card-body">
-        <div id="salida"></div>
-      </div>
-    </section>
+    <div class="col-12 col-lg-8 d-flex">
+      <!-- RESULTADO. Aquí escriben mostrar(), anadirLinea() y anadirBadge(). No cambies el id -->
+      <section class="card mb-4 w-100">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <span><i class="bi bi-display"></i> Resultado</span>
+          <button class="btn btn-sm btn-outline-secondary" onclick="limpiarSalida()"><i class="bi bi-eraser"></i> Borrar</button>
+        </div>
+        <div class="card-body">
+          <div id="salida"></div>
+        </div>
+      </section>
+    </div>
 
+    <div class="col-12 col-lg-4 d-flex">
     <!-- EJERCICIO 1 · Calculadora -->
-    <section class="card mb-4">
-      <div class="card-header">Calculadora</div>
-      <div class="card-body">
-        <!-- Cada botón llama con onclick a su función de js/app.js, como en la tarea 3 -->
-        <button type="button" class="btn btn-primary" onclick="sumar()">Sumar</button>
-        <!-- TODO: los botones Restar, Multiplicar, Dividir, Potencia y Módulo:
-                   restar(), multiplicar(), dividir(), potencia() y modulo() -->
-      </div>
-    </section>
+      <section class="card mb-4 w-100">
+        <div class="card-header d-flex justify-content-between align-items-center">Calculadora</div>
+        <div class="card-body">
+          <!-- Cada botón llama con onclick a su función de js/app.js, como en la tarea 3 -->
+          <button type="button" class="btn btn-primary" onclick="sumar()">Sumar</button>
+          <!-- TODO: los botones Restar, Multiplicar, Dividir, Potencia y Módulo:
+                    restar(), multiplicar(), dividir(), potencia() y modulo() -->
+        </div>
+      </section>
+    </div>
 
+    <div class="col-12 col-lg-3 d-flex">
     <!-- TODO EJERCICIO 2 · Comparaciones: una card con los botones
                «¿Cuál es mayor?» → cualEsMayor()     «¿Par o impar?» → parOImpar() -->
+     <section class="card mb-4 w-100">
+        <div class="card-header d-flex justify-content-between align-items-center">Comparaciones</div>
+        <div class="card-body">
+        </div>
+      </section>
+    </div>
 
+    <div class="col-12 col-lg-5 d-flex">
     <!-- TODO EJERCICIOS 3 Y 4 · Bucles: una card con dos grupos de botones (btn-group)
                Con texto:  for → bucleFor()    while → bucleWhile()    do…while → bucleDoWhile()
                Con badges: for → badgesFor()   while → badgesWhile()   do…while → badgesDoWhile() -->
+     <section class="card mb-4 w-100">
+        <div class="card-header d-flex justify-content-between align-items-center">Bucles</div>
+        <div class="card-body">
+        </div>
+      </section>
+    </div>
+
+  </div>
 
   </main>
 
