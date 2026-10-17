@@ -1,5 +1,5 @@
 /*
-  Tarea 4 · DWEC · [Tu nombre y apellidos]
+  Tarea 4 · DWEC · Christian Alvarez
   Calculadora y bucles.
 
   Cómo usar esta plantilla:
@@ -82,13 +82,39 @@ function dividir() {
 
 
 function potencia() {
-  // TODO: como sumar(), con el operador **
+  const n1 = leerNumero("numero1");
+  const n2 = leerNumero("numero2");
+
+  if (Number.isNaN(n1) || Number.isNaN(n2)) {
+    mostrar("Escribe los dos números antes de operar.", "danger");
+    console.warn("Potencia: falta algún número");
+  } else {
+    const resultado = n1 ** n2;
+    mostrar(`${n1} ** ${n2} = ${resultado}`);
+    console.log(`Potencia: ${n1} ** ${n2} = ${resultado}`);
+  }
 }
 
 function modulo() {
-  // TODO: el resto de la división, con el operador %
-  // TODO: si el número 2 es 0, muestra un error en rojo (5 % 0 da NaN).
+  const n1 = leerNumero("numero1");
+  const n2 = leerNumero("numero2");
+
+  if (Number.isNaN(n1) || Number.isNaN(n2)) {
+    mostrar("Escribe los dos números antes de operar.", "danger");
+    console.warn("Resto: falta algún número");
+  } else if (n2 === 0) {
+
+  // TODO: Revisar errores en rojo (5 % 0 da NaN).
+
+    mostrar("No se puede dividir entre cero.", "danger");
+    console.error("Resto: intento de división por cero");
+  } else {
+    const resultado = n1 % n2;
+    mostrar(`${n1} % ${n2} = ${resultado}`);
+    console.log(`Resto: ${n1} % ${n2} = ${resultado}`);
+  }
 }
+  
 
 
 // ============================================================
