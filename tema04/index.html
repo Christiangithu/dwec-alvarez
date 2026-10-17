@@ -122,12 +122,30 @@
     </div>
 
     <div class="col-12 col-lg-5 d-flex">
-    <!-- TODO EJERCICIOS 3 Y 4 · Bucles: una card con dos grupos de botones (btn-group)
-               Con texto:  for → bucleFor()    while → bucleWhile()    do…while → bucleDoWhile()
-               Con badges: for → badgesFor()   while → badgesWhile()   do…while → badgesDoWhile() -->
-     <section class="card mb-4 w-100">
+      <section class="card mb-4 w-100">
         <div class="card-header d-flex justify-content-between align-items-center">Bucles</div>
         <div class="card-body">
+          <div class="row g-2">
+            <div class="col-12">
+              <p class="mb-1 text-secondary">Con texto</p>
+              <div class="btn-group w-100 mb-3" role="group">
+                <button type="button" class="btn btn-success" onclick="bucleFor()">for</button>
+                <button type="button" class="btn btn-success" onclick="bucleWhile()">while</button>
+                <button type="button" class="btn btn-success" onclick="bucleDoWhile()">do while</button>
+              </div>
+            </div>
+            <div class="col-12">
+              <p class="mb-1 text-secondary">Con badges 
+                <span class="badge bg-primary">pares</span> 
+                <span class="badge bg-secondary">impares</span>
+              </p>
+              <div class="btn-group w-100" role="group">
+                <button type="button" class="btn btn-outline-success" onclick="badgesFor()">for</button>
+                <button type="button" class="btn btn-outline-success" onclick="badgesWhile()">while</button>
+                <button type="button" class="btn btn-outline-success" onclick="badgesDoWhile()">do while</button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>

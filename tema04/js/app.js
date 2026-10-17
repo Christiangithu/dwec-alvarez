@@ -6,7 +6,7 @@
   · Hay una función por botón. Cada una se ejecuta al pulsar su botón de index.html.
   · sumar() está hecha: es el modelo. Escribe las demás donde pone TODO y, cuando termines, borra el TODO.
   · Para leer las casillas y escribir el resultado usa las funciones de js/ayudas.js:
-      leerNumero("numero1"), mostrar(texto, color), anadirLinea(texto), anadirBadge(texto, color), limpiarSalida()
+    leerNumero("numero1"), mostrar(texto, color), anadirLinea(texto), anadirBadge(texto, color), limpiarSalida()
   · Además de en la página, cada función deja su rastro en la consola con console.log().
   · let y const, nunca var. Compara siempre con ===. Comillas rectas.
 */
@@ -116,7 +116,7 @@ function modulo() {
 function cualEsMayor() {
   const n1 = leerNumero("numero1");
   const n2 = leerNumero("numero2");
-  // TODO: con if, else if y else, di cuál de los dos números es mayor o si son iguales.
+
   if (Number.isNaN(n1) || Number.isNaN(n2)) {
     mostrar("Para comparar se necesita dos números.", "danger");
     console.warn("Comparar: falta un número");
@@ -133,8 +133,18 @@ function cualEsMayor() {
 }
 
 function parOImpar() {
-  // TODO: solo con el número 1. Usa el operador % y el ternario ( condición ? "par" : "impar" ).
-  // TODO: si el número tiene decimales, avisa de que no es ni par ni impar.
+  const n1 = leerNumero("numero1");
+  if (Number.isNaN(n1)) {
+    mostrar("Para saber si es par o impar se necesita un número en la casilla 1.", "danger");
+    console.warn("Hay que poner un número en el número 1.");
+  } else if (!Number.isInteger(n1)) {
+    mostrar(`El número ${n1} tiene decimales, por lo que no es ni par ni impar.`, "danger");
+    console.warn(`Par o impar: ${n1} tiene decimales`);
+  } else {
+    const resultado = (n1 % 2 === 0) ? "par" : "impar";
+    mostrar(`El número ${n1} es ${resultado}.`);
+    console.log(`Par o impar: ${n1} es ${resultado}`);
+  }
 }
 
 
@@ -152,6 +162,34 @@ function bucleFor() {
   //         anadirLinea(`for · repetición ${i} de ${veces}`);
   //       y cuenta las vueltas en una variable contador.
   // TODO: al terminar, añade una línea con el total: «Total: 5 repeticiones» o «Total: 1 repetición».
+  if (Number.isNaN(veces)) {
+    mostrar("Escribe el número de repeticiones en la casilla 1.", "danger");
+    console.warn("Bucles: falta el número de repeticiones.");
+    return;
+  }
+  if (!Number.isInteger(veces)) {
+    mostrar("El número de repeticiones debe ser un entero sin decimales.", "danger");
+    console.warn("Bucles: el número tiene decimales.");
+    return;
+  }
+  if (veces < 1) {
+    mostrar("Debes ingresar al menos una repetición.", "danger");
+    console.warn("Bucles: el número de repeticiones es menor a 1.");
+    return;
+  }
+  if (veces > MAXIMO_REPETICIONES) {
+    mostrar(`El número máximo de repeticiones es ${MAXIMO_REPETICIONES}.`, "danger");
+    console.warn(`Bucles: no debe pasar el máximo de ${MAXIMO_REPETICIONES}.`);
+    return;
+  }
+  let contador = 0;
+  for (let i = 1; i <= veces; i++) {
+    anadirLinea(`for · repetición ${i} de ${veces}`);
+    contador++;
+  }
+  const textoRepeticion = contador === 1 ? "repetición" : "repeticiones";
+  anadirLinea(`Total: ${contador} ${textoRepeticion}`);
+  console.log(`bucleFor: completado con ${contador} ${textoRepeticion}`);
 }
 
 function bucleWhile() {
