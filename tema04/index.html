@@ -46,13 +46,16 @@
 
     <div class="col-12 col-lg-4 d-flex">
     <!-- LOS NÚMEROS. No cambies los id: leerNumero("numero1") y leerNumero("numero2") los buscan por su id -->
-     <section class="card mb-4 w-100">
+      <section class="card mb-4 w-100">
         <div class="card-header d-flex justify-content-between align-items-center">Los números</div>
         <div class="card-body">
           <label for="numero1" class="form-label">Número 1</label>
           <input type="number" id="numero1" class="form-control mb-3">
           <label for="numero2" class="form-label">Número 2</label>
           <input type="number" id="numero2" class="form-control">
+          <p class="small text-muted mb-0 mt-3 text-center">
+            El número 1 indica el límite de ejecuciones por bucle: un número entero entre 1 y 20.
+          </p>
         </div>
       </section>
     </div>
@@ -100,11 +103,20 @@
     </div>
 
     <div class="col-12 col-lg-3 d-flex">
-    <!-- TODO EJERCICIO 2 · Comparaciones: una card con los botones
-               «¿Cuál es mayor?» → cualEsMayor()     «¿Par o impar?» → parOImpar() -->
-     <section class="card mb-4 w-100">
+      <section class="card mb-4 w-100">
         <div class="card-header d-flex justify-content-between align-items-center">Comparaciones</div>
         <div class="card-body">
+          <div class="row g-2">
+            <div class="col-12">
+              <button type="button" class="btn btn-primary w-100 text-white" onclick="cualEsMayor()"><i class="bi bi-arrow-left-right"></i> ¿Cuál es mayor?</button>
+            </div>
+            <div class="col-12">
+              <button type="button" class="btn btn-primary w-100 text-white" onclick="parOImpar()"><i class="bi bi-hash"></i> ¿Par o impar?</button>
+            </div>
+            <p class="small text-muted mb-0 mt-3 text-center">
+              Para el par o impar, solo se tiene en cuenta el número 1.
+            </p>
+          </div>
         </div>
       </section>
     </div>

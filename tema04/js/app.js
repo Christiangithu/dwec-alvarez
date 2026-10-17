@@ -103,9 +103,6 @@ function modulo() {
     mostrar("Escribe los dos números antes de operar.", "danger");
     console.warn("Resto: falta algún número");
   } else if (n2 === 0) {
-
-  // TODO: Revisar errores en rojo (5 % 0 da NaN).
-
     mostrar("No se puede dividir entre cero.", "danger");
     console.error("Resto: intento de división por cero");
   } else {
@@ -115,14 +112,24 @@ function modulo() {
   }
 }
   
-
-
-// ============================================================
 // Ejercicio 2 · Comparaciones
-// ============================================================
-
 function cualEsMayor() {
+  const n1 = leerNumero("numero1");
+  const n2 = leerNumero("numero2");
   // TODO: con if, else if y else, di cuál de los dos números es mayor o si son iguales.
+  if (Number.isNaN(n1) || Number.isNaN(n2)) {
+    mostrar("Para comparar se necesita dos números.", "danger");
+    console.warn("Comparar: falta un número");
+  } else if (n1 > n2){
+    mostrar(`El número mayor es: ${n1}`);
+    console.log(`El número mayor es: ${n1}`);
+  } else if (n1 < n2){
+    mostrar(`El número mayor es: ${n2}`);
+    console.log(`El número mayor es: ${n2}`);
+  } else if (n1 === n2){
+    mostrar(`Los números son iguales.`);
+    console.log(`Los números son iguales.`);
+  }
 }
 
 function parOImpar() {
