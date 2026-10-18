@@ -35,6 +35,7 @@ function sumar() {
   }
 }
 
+//Operación resta
 function restar() {
   const n1 = leerNumero("numero1");
   const n2 = leerNumero("numero2");
@@ -49,6 +50,7 @@ function restar() {
   }
 }
 
+//Operación multiplicar
 function multiplicar() {
   const n1 = leerNumero("numero1");
   const n2 = leerNumero("numero2");
@@ -63,6 +65,7 @@ function multiplicar() {
   }
 }
 
+//Operación dividir
 function dividir() {
   const n1 = leerNumero("numero1");
   const n2 = leerNumero("numero2");
@@ -80,7 +83,7 @@ function dividir() {
   }
 }
 
-
+//Operación potencia
 function potencia() {
   const n1 = leerNumero("numero1");
   const n2 = leerNumero("numero2");
@@ -95,6 +98,7 @@ function potencia() {
   }
 }
 
+//Operación resto
 function modulo() {
   const n1 = leerNumero("numero1");
   const n2 = leerNumero("numero2");
@@ -113,6 +117,8 @@ function modulo() {
 }
   
 // Ejercicio 2 · Comparaciones
+
+//Compara número mayor o igual
 function cualEsMayor() {
   const n1 = leerNumero("numero1");
   const n2 = leerNumero("numero2");
@@ -132,6 +138,7 @@ function cualEsMayor() {
   }
 }
 
+//Comprueba si es par o impar
 function parOImpar() {
   const n1 = leerNumero("numero1");
   if (Number.isNaN(n1)) {
@@ -153,28 +160,29 @@ function parOImpar() {
 // El número 1 dice cuántas veces se repite cada bucle
 // ============================================================
 
+//Bucle for
 function bucleFor() {
   const veces = leerNumero("numero1");
   limpiarSalida();
 
   if (Number.isNaN(veces)) {
     mostrar("Escribe el número de repeticiones en la casilla 1.", "danger");
-    console.warn("Bucles: falta el número de repeticiones.");
+    console.warn("BucleFor: falta el número de repeticiones.");
     return;
   }
   if (!Number.isInteger(veces)) {
     mostrar("El número de repeticiones debe ser un entero sin decimales.", "danger");
-    console.warn("Bucles: el número tiene decimales.");
+    console.warn("BucleFor: el número tiene decimales.");
     return;
   }
   if (veces < 1) {
     mostrar("Debes ingresar al menos una repetición.", "danger");
-    console.warn("Bucles: el número de repeticiones es menor a 1.");
+    console.warn("BucleFor: el número de repeticiones es menor a 1.");
     return;
   }
   if (veces > MAXIMO_REPETICIONES) {
     mostrar(`El número máximo de repeticiones es ${MAXIMO_REPETICIONES}.`, "danger");
-    console.warn(`Bucles: no debe pasar el máximo de ${MAXIMO_REPETICIONES}.`);
+    console.warn(`BucleFor: no debe pasar el máximo de ${MAXIMO_REPETICIONES}.`);
     return;
   }
   let contador = 0;
@@ -187,28 +195,29 @@ function bucleFor() {
   console.log(`bucleFor: completado con ${contador} ${textoRepeticion}`);
 }
 
+//Bucle while
 function bucleWhile() {
   const veces = leerNumero("numero1");
   limpiarSalida();
 
   if (Number.isNaN(veces)) {
     mostrar("Escribe el número de repeticiones en la casilla 1.", "danger");
-    console.warn("Bucles: falta el número de repeticiones.");
+    console.warn("BucleWhile: falta el número de repeticiones.");
     return;
   }
   if (!Number.isInteger(veces)) {
     mostrar("El número de repeticiones debe ser un entero sin decimales.", "danger");
-    console.warn("Bucles: el número tiene decimales.");
+    console.warn("BucleWhile: el número tiene decimales.");
     return;
   }
   if (veces < 1) {
     mostrar("Debes ingresar al menos una repetición.", "danger");
-    console.warn("Bucles: el número de repeticiones es menor a 1.");
+    console.warn("BucleWhile: el número de repeticiones es menor a 1.");
     return;
   }
   if (veces > MAXIMO_REPETICIONES) {
     mostrar(`El número máximo de repeticiones es ${MAXIMO_REPETICIONES}.`, "danger");
-    console.warn(`Bucles: no debe pasar el máximo de ${MAXIMO_REPETICIONES}.`);
+    console.warn(`BucleWhile: no debe pasar el máximo de ${MAXIMO_REPETICIONES}.`);
     return;
   }
   let contador = 0;
@@ -224,29 +233,29 @@ function bucleWhile() {
   console.log(`bucleWhile: completado con ${contador} ${textoRepeticion}`);
 }
 
-
+//Bucle do while
 function bucleDoWhile() {
   const veces = leerNumero("numero1");
   limpiarSalida();
 
   if (Number.isNaN(veces)) {
     mostrar("Escribe el número de repeticiones en la casilla 1.", "danger");
-    console.warn("Bucles: falta el número de repeticiones.");
+    console.warn("BucleDoWhile: falta el número de repeticiones.");
     return;
   }
   if (!Number.isInteger(veces)) {
     mostrar("El número de repeticiones debe ser un entero sin decimales.", "danger");
-    console.warn("Bucles: el número tiene decimales.");
+    console.warn("BucleDoWhile: el número tiene decimales.");
     return;
   }
   if (veces < 1) {
     mostrar("Debes ingresar al menos una repetición.", "danger");
-    console.warn("Bucles: el número de repeticiones es menor a 1.");
+    console.warn("BucleDoWhile: el número de repeticiones es menor a 1.");
     return;
   }
   if (veces > MAXIMO_REPETICIONES) {
     mostrar(`El número máximo de repeticiones es ${MAXIMO_REPETICIONES}.`, "danger");
-    console.warn(`Bucles: no debe pasar el máximo de ${MAXIMO_REPETICIONES}.`);
+    console.warn(`BucleDoWhile: no debe pasar el máximo de ${MAXIMO_REPETICIONES}.`);
     return;
   }
   let contador = 0;
@@ -267,28 +276,29 @@ function bucleDoWhile() {
 // Ejercicio 4 · Bucles con badges
 // ============================================================
 
+//Badge for
 function badgesFor() {
   const veces = leerNumero("numero1");
   limpiarSalida();
 
   if (Number.isNaN(veces)) {
     mostrar("Escribe el número de repeticiones en la casilla 1.", "danger");
-    console.warn("Bucles: falta el número de repeticiones.");
+    console.warn("BucleBadgeFor: falta el número de repeticiones.");
     return;
   }
   if (!Number.isInteger(veces)) {
     mostrar("El número de repeticiones debe ser un entero sin decimales.", "danger");
-    console.warn("Bucles: el número tiene decimales.");
+    console.warn("BucleBadgeFor: el número tiene decimales.");
     return;
   }
   if (veces < 1) {
     mostrar("Debes ingresar al menos una repetición.", "danger");
-    console.warn("Bucles: el número de repeticiones es menor a 1.");
+    console.warn("BucleBadgeFor: el número de repeticiones es menor a 1.");
     return;
   }
   if (veces > MAXIMO_REPETICIONES) {
     mostrar(`El número máximo de repeticiones es ${MAXIMO_REPETICIONES}.`, "danger");
-    console.warn(`Bucles: no debe pasar el máximo de ${MAXIMO_REPETICIONES}.`);
+    console.warn(`BucleBadgeFor: no debe pasar el máximo de ${MAXIMO_REPETICIONES}.`);
     return;
   }
   let contador = 0;
@@ -302,6 +312,7 @@ function badgesFor() {
   console.log(`bucleBadgesFor: completado con ${contador} ${textoRepeticion}`);
 }
 
+//badge while
 function badgesWhile() {
   // TODO: lo mismo que badgesFor(), con un while.
   const veces = leerNumero("numero1");
@@ -309,22 +320,22 @@ function badgesWhile() {
 
   if (Number.isNaN(veces)) {
     mostrar("Escribe el número de repeticiones en la casilla 1.", "danger");
-    console.warn("Bucles: falta el número de repeticiones.");
+    console.warn("BucleBadgeWhile: falta el número de repeticiones.");
     return;
   }
   if (!Number.isInteger(veces)) {
     mostrar("El número de repeticiones debe ser un entero sin decimales.", "danger");
-    console.warn("Bucles: el número tiene decimales.");
+    console.warn("BucleBadgeWhile: el número tiene decimales.");
     return;
   }
   if (veces < 1) {
     mostrar("Debes ingresar al menos una repetición.", "danger");
-    console.warn("Bucles: el número de repeticiones es menor a 1.");
+    console.warn("BucleBadgeWhile: el número de repeticiones es menor a 1.");
     return;
   }
   if (veces > MAXIMO_REPETICIONES) {
     mostrar(`El número máximo de repeticiones es ${MAXIMO_REPETICIONES}.`, "danger");
-    console.warn(`Bucles: no debe pasar el máximo de ${MAXIMO_REPETICIONES}.`);
+    console.warn(`BucleBadgeWhile: no debe pasar el máximo de ${MAXIMO_REPETICIONES}.`);
     return;
   }
   let contador = 0;
@@ -340,29 +351,29 @@ function badgesWhile() {
   console.log(`bucleBadgesWhile: completado con ${contador} ${textoRepeticion}`);
 }
 
-function badgesDoWhile() {
-  // TODO: lo mismo que badgesFor(), con un do…while.
+//badge do while
+  function badgesDoWhile() {
   const veces = leerNumero("numero1");
   limpiarSalida();
 
   if (Number.isNaN(veces)) {
     mostrar("Escribe el número de repeticiones en la casilla 1.", "danger");
-    console.warn("Bucles: falta el número de repeticiones.");
+    console.warn("BucleBadgeDoWhile: falta el número de repeticiones.");
     return;
   }
   if (!Number.isInteger(veces)) {
     mostrar("El número de repeticiones debe ser un entero sin decimales.", "danger");
-    console.warn("Bucles: el número tiene decimales.");
+    console.warn("BucleBadgeDoWhile: el número tiene decimales.");
     return;
   }
   if (veces < 1) {
     mostrar("Debes ingresar al menos una repetición.", "danger");
-    console.warn("Bucles: el número de repeticiones es menor a 1.");
+    console.warn("BucleBadgeDoWhile: el número de repeticiones es menor a 1.");
     return;
   }
   if (veces > MAXIMO_REPETICIONES) {
     mostrar(`El número máximo de repeticiones es ${MAXIMO_REPETICIONES}.`, "danger");
-    console.warn(`Bucles: no debe pasar el máximo de ${MAXIMO_REPETICIONES}.`);
+    console.warn(`BucleBadgeDoWhile: no debe pasar el máximo de ${MAXIMO_REPETICIONES}.`);
     return;
   }
   let contador = 0;
@@ -373,7 +384,7 @@ function badgesDoWhile() {
     i ++;
     contador ++;
   } while (i <= veces);
-  
+
   const textoRepeticion = contador === 1 ? "repetición" : "repeticiones";
   anadirLinea(`Total: ${contador} ${textoRepeticion}`);
   console.log(`bucleBadgesDoWhile: completado con ${contador} ${textoRepeticion}`);
