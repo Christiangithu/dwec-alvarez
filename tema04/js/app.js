@@ -314,7 +314,6 @@ function badgesFor() {
 
 //badge while
 function badgesWhile() {
-  // TODO: lo mismo que badgesFor(), con un while.
   const veces = leerNumero("numero1");
   limpiarSalida();
 
