@@ -110,13 +110,43 @@ function activarResaltado() {
 
 function cambiarTexto() {
   // TODO: lee lo escrito en #nuevoTexto con value y quítale los espacios de los extremos con trim().
+  const inputTexto = document.querySelector("#nuevoTexto");
+  const texto = inputTexto.value.trim();
+  const error4 = document.querySelector("#error4");
+
   // TODO: si está vacío, muestra el error #error4 (quítale "d-none") y no cambies nada.
-  // TODO: si no, pon ese texto en el primer párrafo de #contenido con textContent y oculta el error.
+  if (texto === "") {
+    error4.classList.remove("d-none");
+  } else {
+    // TODO: si no, pon ese texto en el primer párrafo de #contenido con textContent y oculta el error.
+    const primero = document.querySelector("#contenido p");
+    if (primero) {
+      primero.textContent = texto;
+    }
+    error4.classList.add("d-none");
+  }
+
+  console.log("cambiarTexto ejecutado");
 }
 
 function cambiarConHtml() {
   // TODO: lo mismo que cambiarTexto(), pero con innerHTML.
   //       Prueba las dos con <b>hola</b> y explica en el README qué diferencia ves y por qué es peligroso.
+  const inputTexto = document.querySelector("#nuevoTexto");
+  const texto = inputTexto.value.trim();
+  const error4 = document.querySelector("#error4");
+
+  if (texto === "") {
+    error4.classList.remove("d-none");
+  } else {
+    const primero = document.querySelector("#contenido p");
+    if (primero) {
+      primero.innerHTML = texto;
+    }
+    error4.classList.add("d-none");
+  }
+
+  console.log("cambiarConHtml ejecutado");
 }
 
 
