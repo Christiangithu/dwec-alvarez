@@ -93,10 +93,14 @@ function activarResaltado() {
       parrafo.classList.add("bg-body-secondary");
     });
 
-    // TODO: lo mismo con "mouseleave" (cuando el ratón sale) para quitar la clase.
+    //Lo mismo con "mouseleave" (cuando el ratón sale) para quitar la clase.
+    parrafo.addEventListener("mouseleave", function () {
+      parrafo.classList.remove("bg-body-secondary");
+    });
   }
 
-  // TODO: un console.log() que diga en cuántos párrafos se ha activado (parrafos.length).
+  //Indica en cuántos párrafos se ha activado el resaltado (parrafos.length).
+  console.log(`Resaltado activado en ${parrafos.length} párrafos.`);
 }
 
 
