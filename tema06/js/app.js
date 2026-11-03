@@ -31,52 +31,53 @@ function comoTexto(lista) {
 // Ejercicio 1 · Ficha de estudiante
 // ============================================================
 
-// TODO: completa el objeto literal con tus datos: nombre, apellidos, edad y curso.
-// TODO: añádele el método presentarse(), que devuelve una frase con this.nombre, this.apellidos, this.edad y this.curso.
-//       Por ejemplo: «Soy [nombre] [apellidos], tengo [edad] años y estudio [curso].»
+
 const estudiante = {
+  
   nombre: "Christian",
   apellidos: "Alvarez",
   edad: 31,
-  curso: "DAW",
+  curso: "DWEC",
   presentarse: function () {
     return "Soy " + this.nombre + " " + this.apellidos + ", tengo " + this.edad + " años y estudio " + this.curso + ".";
   }
 };
 
 
-  // TODO: vacía #salida1 (textContent = "").
-  // TODO: crea un <ul class="list-group"> con un <li class="list-group-item"> por propiedad: «nombre: ...», «edad: ...».
-  //       Pista: guarda las claves en un array, ["nombre", "apellidos", "edad", "curso"], recórrelo con forEach
-  //       y lee cada valor con corchetes: estudiante[clave].
-  // TODO: debajo, un <p> con la frase de estudiante.presentarse().
-  // TODO: console.log() del objeto entero.
-  
 function verFicha() {
+
   const salida = document.querySelector("#salida1");
   salida.textContent = "";
 
   const ul = document.createElement("ul");
-  ul.classList.add("list-group", "mb-3");
+  ul.classList.add("list-group");
 
   const claves = ["nombre", "apellidos", "edad", "curso"];
   claves.forEach(function (clave) {
-    if (estudiante[clave] !== undefined) {
-      const li = document.createElement("li");
-      li.classList.add("list-group-item");
-      li.textContent = clave + ": " + estudiante[clave];
-      ul.append(li);
-    }
+    const li = document.createElement("li");
+    li.classList.add("list-group-item");
+    li.textContent = clave + ": " + estudiante[clave];
+    ul.append(li);
   });
+  const p = document.createElement("p");
+  p.classList.add("mt-2", "mb-0");
+  p.textContent = estudiante.presentarse();
+
+  salida.append(ul, p);
+  console.log("Ejercicio 1: estudiante →", estudiante);
 }
 
 function cumplirAnios() {
   // TODO: suma 1 a la edad del estudiante y vuelve a pintar la ficha (llama a verFicha()).
+  estudiante.edad = estudiante.edad + 1;
+  verFicha();
 }
 
 function quitarCurso() {
   // TODO: borra la propiedad curso con delete y vuelve a pintar la ficha.
   //       Fíjate en lo que sale ahora en el curso y explícalo en el README.
+  delete estudiante.curso;
+  verFicha();
 }
 
 
