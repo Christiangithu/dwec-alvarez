@@ -22,6 +22,7 @@ console.log("app.js cargado");
 // (ya está hecha: úsala cuando quieras enseñar un array)
 // ============================================================
 
+// Prepara una lista para poder mostrarla como texto.
 function comoTexto(lista) {
   return "[" + lista.join(", ") + "]";
 }
@@ -31,7 +32,7 @@ function comoTexto(lista) {
 // Ejercicio 1 · Ficha de estudiante
 // ============================================================
 
-
+// Datos del estudiante y acciones para mostrar o cambiar su ficha.
 const estudiante = {
 
   nombre: "Christian",
@@ -44,6 +45,7 @@ const estudiante = {
 };
 
 
+// Muestra los datos del estudiante en una lista.
 function verFicha() {
 
   const salida = document.querySelector("#salida1");
@@ -67,6 +69,7 @@ function verFicha() {
   console.log("Ejercicio 1: estudiante →", estudiante);
 }
 
+// Cambia la edad o quita el curso y vuelve a mostrar la ficha.
 function cumplirAnios() {
   estudiante.edad = estudiante.edad + 1;
   verFicha();
@@ -84,6 +87,7 @@ function quitarCurso() {
 // mostrarColores() y anadirColor() ya están hechas: son el modelo
 // ============================================================
 
+// Lista inicial de colores y acciones para añadir o quitar elementos.
 const colores = ["rojo", "verde", "azul"];
 
 function mostrarColores() {
@@ -154,6 +158,8 @@ mostrarColores();   // pinta los tres colores de partida nada más cargar
 // ============================================================
 
 // Puedes cambiar los productos por otros, pero deja al menos seis, con estas tres propiedades
+
+// Productos de ejemplo para mostrar, ordenar, filtrar y buscar.
 const productos = [
   { nombre: "Teclado mecánico", precio: 79.9, categoria: "Periféricos" },
   { nombre: "Ratón inalámbrico", precio: 24.5, categoria: "Periféricos" },
@@ -164,6 +170,8 @@ const productos = [
 ];
 
 // Ya está hecha: pinta en la tabla la lista de productos que le pases
+
+// Actualiza la tabla con los productos recibidos.
 function pintarProductos(lista) {
   const cuerpo = document.querySelector("#tablaProductos");
   cuerpo.textContent = "";
@@ -244,6 +252,7 @@ mostrarProductos();   // la tabla completa nada más cargar
 // Ejercicio 4 · Notas
 // ============================================================
 
+// Guarda las notas y calcula la media del alumno.
 const alumno = {
   nombre: "Christian",
   notas: [],
@@ -265,6 +274,7 @@ const alumno = {
   }
 };
 
+// Muestra las notas y la media en la página.
 function mostrarNotas() {
   const contenedor = document.querySelector("#notas");
   contenedor.textContent = "";
@@ -290,6 +300,7 @@ function mostrarNotas() {
 }
 
 
+// Comprueba la nota escrita y la añade si es válida.
 function anadirNota() {
   const contenedor = document.querySelector("#nota");
   const error4 = document.querySelector("#error4");
@@ -314,6 +325,7 @@ function anadirNota() {
   }
 }
 
+// Borra todas las notas y actualiza la página.
 function borrarNotas() {
   alumno.notas = [];
   mostrarNotas();
@@ -327,6 +339,7 @@ mostrarNotas();
 // Ejercicio 5 · map, filter y reduce
 // ============================================================
 
+// Números de partida para los ejemplos de este ejercicio.
 const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 function verDobles() {
@@ -385,9 +398,11 @@ function verCadena() {
 // Ejercicio 6 · Ciudades
 // ============================================================
 
+// Lista inicial y copia para poder restaurarla después.
 const ciudadesOriginal = ["Granada", "Sevilla", "Málaga", "Córdoba", "Jaén", "Almería", "Cádiz", "Huelva"];
-let ciudades = [...ciudadesOriginal];   // una copia: splice cambia ciudades y así podemos restaurarla
+let ciudades = [...ciudadesOriginal];
 
+// Muestra la lista y permite recortarla, cambiarla o buscar una ciudad.
 function mostrarCiudades() {
   const contenedor = document.querySelector("#ciudades");
   contenedor.textContent = "";

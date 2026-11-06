@@ -42,8 +42,10 @@ function pintarLista(selector, textos) {
 //       iva vale 21 por defecto y descuento, 0 por defecto (parámetros por defecto).
 //       Primero se resta el descuento (un tanto por ciento de la base) y después se suma el IVA.
 //       Comprueba en la consola: calcularPrecio(100) tiene que dar 121.
-function calcularPrecio(base, iva, descuento) {
-
+function calcularPrecio(base, iva = 21, descuento = 0) {
+  const baseConDescuento = base * (1 - descuento / 100);
+  const precioFinal = baseConDescuento * (1 + iva / 100);
+  return precioFinal;
 }
 
 // Ya está hecha: 74.8 → "74.80 €"
@@ -58,6 +60,49 @@ function mostrarPrecio() {
   //       use el valor por defecto. Si no, comprueba que está entre 0 y 100 y pásaselo.
   // TODO: oculta el error y pinta el desglose en #salida1 con pintarLista():
   //       «Precio sin IVA: …», «Descuento: … %», «IVA: … %» y «Precio final: …» (con formatearEuros).
+  const baseInput = document.querySelector("#base").value.trim();
+  const ivaInput = document.querySelector("#iva").value;
+  const descuentoInput = document.querySelector("#descuento").value.trim();
+  const errorEl = document.querySelector("#error1");
+
+  const base = Number(baseInput);
+  const iva = Number(ivaInput);
+
+  if (baseInput === "" || Number.isNaN(base) || base < 0) {
+    errorEl.textContent = "La base no puede estar vacía ni ser negativa.";
+    errorEl.classList.remove("d-none");
+    return;
+  }
+
+  let descuento;
+  if (descuentoInput === "") {
+    descuento = undefined;
+  } else {
+    descuento = Number(descuentoInput);
+    if (Number.isNaN(descuento) || descuento < 0 || descuento > 100) {
+      errorEl.textContent = "El descuento debe estar entre 0 y 100.";
+      errorEl.classList.remove("d-none");
+      return;
+    }
+  }
+
+  errorEl.classList.add("d-none");
+
+  const precioFinal = descuento === undefined
+    ? calcularPrecio(base, iva)
+    : calcularPrecio(base, iva, descuento);
+
+  const descPorcentaje = descuento === undefined ? 0 : descuento;
+
+  const desglose = [
+    `Precio sin IVA: ${formatearEuros(base)}`,
+    `Descuento: ${descPorcentaje}%`,
+    `IVA: ${iva}%`,
+    `Precio final: ${formatearEuros(precioFinal)}`
+  ];
+
+  pintarLista("#salida1", desglose);
+  console.log("Ejercicio 1: calcularPrecio →", precioFinal);
 }
 
 
