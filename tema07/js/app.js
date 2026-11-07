@@ -88,9 +88,7 @@ function mostrarPrecio() {
 
   errorEl.classList.add("d-none");
 
-  const precioFinal = descuento === undefined
-    ? calcularPrecio(base, iva)
-    : calcularPrecio(base, iva, descuento);
+  const precioFinal = descuento === undefined ? calcularPrecio(base, iva) : calcularPrecio(base, iva, descuento);
 
   const descPorcentaje = descuento === undefined ? 0 : descuento;
 
@@ -129,36 +127,28 @@ function comoTexto(pelicula) {
 //       sin llaves ni return. Comprueba después que cada botón sigue dando lo mismo.
 
 function verTitulos() {
-  const titulos = peliculas.map(function (pelicula) {
-    return pelicula.titulo;
-  });
+  const titulos = peliculas.map((pelicula) => pelicula.titulo);
   pintarLista("#salida2", titulos);
   document.querySelector("#mensaje2").textContent = `${titulos.length} títulos.`;
   console.log("Ejercicio 2: map →", titulos);
 }
 
 function verLargas() {
-  const largas = peliculas.filter(function (pelicula) {
-    return pelicula.duracion > 120;
-  });
+  const largas = peliculas.filter((pelicula) => pelicula.duracion > 120);
   pintarLista("#salida2", largas.map(comoTexto));   // comoTexto ya es una función: se pasa sin paréntesis
   document.querySelector("#mensaje2").textContent = `${largas.length} películas duran más de 2 horas.`;
   console.log("Ejercicio 2: filter →", largas);
 }
 
 function ordenarPorAnio() {
-  const ordenadas = [...peliculas].sort(function (a, b) {   // una copia: sort cambia el original
-    return a.anio - b.anio;
-  });
+  const ordenadas = [...peliculas].sort((a, b) => a.anio - b.anio);
   pintarLista("#salida2", ordenadas.map(comoTexto));
   document.querySelector("#mensaje2").textContent = "De la más antigua a la más reciente.";
   console.log("Ejercicio 2: sort →", ordenadas);
 }
 
 function verDuracionTotal() {
-  const minutos = peliculas.reduce(function (total, pelicula) {
-    return total + pelicula.duracion;
-  }, 0);
+  const minutos = peliculas.reduce((total, pelicula) => total + pelicula.duracion, 0);
   pintarLista("#salida2", [`${minutos} minutos de películas`]);
   document.querySelector("#mensaje2").textContent = "La suma de las seis duraciones.";
   console.log("Ejercicio 2: reduce →", minutos);
@@ -168,6 +158,15 @@ function buscarAntigua() {
   // TODO: el callback nuevo, ya con flecha: con find(), la primera película anterior a 1990.
   // TODO: find devuelve undefined si no hay ninguna: dilo en #mensaje2 y vacía la lista.
   //       Si la encuentra, píntala con pintarLista("#salida2", [comoTexto(antigua)]).
+const antigua = peliculas.find((pelicula) => pelicula.anio < 1990);
+  if (antigua === undefined) {
+    document.querySelector("#mensaje2").textContent = "No se ha encontrado ninguna película anterior a 1990.";
+    pintarLista("#salida2", []);
+  } else {
+    document.querySelector("#mensaje2").textContent = "Primera película anterior a 1990 encontrada.";
+    pintarLista("#salida2", [comoTexto(antigua)]);
+  }
+  console.log("Ejercicio 2: find →", antigua);
 }
 
 
@@ -182,7 +181,11 @@ document.querySelector("#numeros3").textContent = `const numeros = [${numeros.jo
 //       recorre lista con for…of, llama a operacion con cada elemento, guarda lo que devuelve
 //       en un array nuevo y, al final, devuelve ese array.
 function transformar(lista, operacion) {
-
+const resultado = [];
+  for (const elemento of lista) {
+    resultado.push(operacion(elemento));
+  }
+  return resultado;
 }
 
 // Ya está hecha: escribe en #salida3 tu resultado, el de map y numeros
@@ -272,20 +275,56 @@ class Alumno {
 
   // TODO: anadirNota(nota): si la nota no es un número (Number.isNaN) o no está entre 0 y 10, devuelve false;
   //       si es válida, la añade a this.notas y devuelve true.
+  anadirNota(nota) {
+    if (typeof nota !== "number" || Number.isNaN(nota) || nota < 0 || nota > 10) {
+      return false;
+    }
+    this.notas.push(nota);
+    return true;
+  }
+
   // TODO: media(): 0 si no hay notas; si hay, la suma con reduce (con flecha) entre el número de notas.
+  media() {
+    if (this.notas.length === 0) {
+      return 0;
+    }
+    const suma = this.notas.reduce((acc, n) => acc + n, 0);
+    return suma / this.notas.length;
+  }
+
   // TODO: presentarse(): devuelve «Lucía Martín, de 2.º DAW».
   //       Recuerda: en una clase, los métodos van sin function y sin comas entre ellos.
+  presentarse() {
+    return `${this.nombre}, de ${this.curso}`;
+  }
 }
 
 class AlumnoFCT extends Alumno {
   // TODO: constructor(nombre, curso, empresa): primero super(nombre, curso) y después guarda la empresa.
+  constructor(nombre, curso, empresa) {
+    super(nombre, curso);
+    this.empresa = empresa;
+  }
+
   // TODO: presentarse(): la frase de Alumno (super.presentarse()) más «, en prácticas en TecnoSur».
+  presentarse() {
+    return `${super.presentarse()}, en prácticas en ${this.empresa}`;
+  }
 }
 
 const alumnos = [];
 
 // TODO: cuando tengas las clases, crea aquí dos alumnos de partida y añádelos a alumnos con push:
 //       un Alumno con dos notas y un AlumnoFCT con otras dos.
+const alumno1 = new Alumno("Lucía Martín", "2.º DAW");
+alumno1.anadirNota(8);
+alumno1.anadirNota(8);
+
+const alumno2 = new AlumnoFCT("Marcos Ruiz", "2.º DAW", "TecnoSur");
+alumno2.anadirNota(7);
+alumno2.anadirNota(7.5);
+
+alumnos.push(alumno1, alumno2);
 
 // Ya está hecha: pinta una tarjeta por alumno en #listaAlumnos y actualiza #totalAlumnos
 function pintarAlumnos() {
@@ -335,6 +374,47 @@ function crearAlumno() {
   // TODO: si hay notas, sepáralas con split(",") y conviértelas con map((texto) => Number(texto.trim())).
   //       Si alguna no es válida (some), error en #error5 y no sigas. Si todas lo son, añádelas con anadirNota().
   // TODO: añade el alumno a alumnos, oculta el error, vacía las casillas y llama a pintarAlumnos().
+  const nombreInput = document.querySelector("#nombre5").value.trim();
+  const cursoInput = document.querySelector("#curso5").value;
+  const empresaInput = document.querySelector("#empresa5").value.trim();
+  const notasInput = document.querySelector("#notas5").value.trim();
+  const errorEl = document.querySelector("#error5");
+
+  if (nombreInput === "") {
+    errorEl.textContent = "El nombre no puede estar vacío.";
+    errorEl.classList.remove("d-none");
+    return;
+  }
+
+  let nuevoAlumno;
+  if (empresaInput !== "") {
+    nuevoAlumno = new AlumnoFCT(nombreInput, cursoInput, empresaInput);
+  } else {
+    nuevoAlumno = new Alumno(nombreInput, cursoInput);
+  }
+
+  if (notasInput !== "") {
+    const arrayNotas = notasInput.split(",").map((texto) => Number(texto.trim()));
+    const algunaInvalida = arrayNotas.some((n) => Number.isNaN(n) || n < 0 || n > 10);
+
+    if (algunaInvalida) {
+      errorEl.textContent = "Una o varias notas introducidas no son válidas (deben estar entre 0 y 10).";
+      errorEl.classList.remove("d-none");
+      return;
+    }
+
+    arrayNotas.forEach((n) => nuevoAlumno.anadirNota(n));
+  }
+
+  errorEl.classList.add("d-none");
+  alumnos.push(nuevoAlumno);
+
+  document.querySelector("#nombre5").value = "";
+  document.querySelector("#empresa5").value = "";
+  document.querySelector("#notas5").value = "";
+
+  pintarAlumnos();
+  console.log("Ejercicio 5: alumno creado →", nuevoAlumno);
 }
 
 pintarAlumnos();
@@ -348,11 +428,17 @@ pintarAlumnos();
 //       Pon hoy a medianoche (hoy.setHours(0, 0, 0, 0)), resta las fechas, divide entre los milisegundos
 //       de un día y redondea con Math.round: con el cambio de hora, la resta no siempre da un número entero.
 function diasHasta(fecha) {
+  const hoy = new Date();
+  hoy.setHours(0, 0, 0, 0);
 
+  const msPorDia = 1000 * 60 * 60 * 24;
+  const diferenciaMs = fecha.getTime() - hoy.getTime();
+
+  return Math.round(diferenciaMs / msPorDia);
 }
 
 function mostrarDias() {
-  const valor = document.querySelector("#fecha6").value;        // "2026-12-25", o "" si está vacía
+  const valor = document.querySelector("#fecha6").value; // "2026-12-25", o "" si está vacía
   const salida = document.querySelector("#salida6a");
 
   if (valor === "") {
@@ -366,22 +452,60 @@ function mostrarDias() {
 
   // TODO: con diasHasta(fecha), escribe en #salida6a «Faltan N días: será viernes, 25 de diciembre de 2026.»,
   //       «Es hoy…» o «Fue hace N días…». El nombre de la fecha, con toLocaleDateString("es-ES", {…}).
+  const dias = diasHasta(fecha);
+  const fechaFormateada = fecha.toLocaleDateString("es-ES", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  });
+
+  if (dias > 0) {
+    salida.textContent = `Faltan ${dias} días: será ${fechaFormateada}.`;
+  } else if (dias === 0) {
+    salida.textContent = `Es hoy: ${fechaFormateada}.`;
+  } else {
+    salida.textContent = `Fue hace ${Math.abs(dias)} días: fue ${fechaFormateada}.`;
+  }
+
+  console.log("Ejercicio 6a: días hasta →", dias);
 }
 
 // TODO: iniciales(nombreCompleto) devuelve las iniciales en mayúsculas: «lucía martín ortega» → «LMO».
 //       Encadena trim, split(" "), filter (para quitar las palabras vacías si hay espacios dobles),
 //       map (la primera letra de cada palabra, en mayúscula) y join("").
 function iniciales(nombreCompleto) {
-
+  return nombreCompleto
+    .trim()
+    .split(" ")
+    .filter((palabra) => palabra.length > 0)
+    .map((palabra) => palabra[0].toUpperCase())
+    .join("");
 }
 
 // TODO: crearUsuario(nombreCompleto) devuelve las iniciales en minúsculas y tres cifras al azar, de 000 a 999:
 //       «lmo042». Pista: Math.random, Math.floor y padStart(3, "0").
 function crearUsuario(nombreCompleto) {
-
+  const inis = iniciales(nombreCompleto).toLowerCase();
+  const numeroAzar = Math.floor(Math.random() * 1000);
+  const numeroFormateado = String(numeroAzar).padStart(3, "0");
+  return `${inis}${numeroFormateado}`;
 }
 
 function mostrarIniciales() {
   // TODO: lee #nombre6. Si está vacío, avisa en #salida6b.
   // TODO: si no, escribe en #salida6b «Iniciales: LMO · usuario: lmo042».
+  const nombreInput = document.querySelector("#nombre6").value;
+  const salida = document.querySelector("#salida6b");
+
+  if (nombreInput.trim() === "") {
+    salida.textContent = "Escribe un nombre completo.";
+    return;
+  }
+
+  const inis = iniciales(nombreInput);
+  const usr = crearUsuario(nombreInput);
+
+  salida.textContent = `Iniciales: ${inis} · usuario: ${usr}`;
+  console.log("Ejercicio 6b: iniciales y usuario →", { iniciales: inis, usuario: usr });
 }
