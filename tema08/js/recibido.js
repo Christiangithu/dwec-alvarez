@@ -1,5 +1,5 @@
 /*
-  Tarea 8 · DWEC · [Tu nombre y apellidos]
+  Tarea 8 · DWEC · Christian Alvarez
   recibido.html: lee lo que ha llegado por GET y lo pinta en la tabla.
   En una web real esto lo haría el servidor; aquí lo hacemos en el navegador para verlo.
 */
