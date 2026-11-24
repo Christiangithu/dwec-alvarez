@@ -1,25 +1,24 @@
 /*
-  Tarea 8 · DWEC · [Tu nombre y apellidos]
+  Tarea 8 · DWEC · Christian Alvarez
   recibido.html: lee lo que ha llegado por GET y lo pinta en la tabla.
   En una web real esto lo haría el servidor; aquí lo hacemos en el navegador para verlo.
 */
 
 console.log("recibido.js cargado");
 
+// Lee la cadena de consulta de la dirección
 // location.search es la parte de la URL desde el ?, por ejemplo "?nombre=Luc%C3%ADa&taller=html"
 console.log("Ha llegado:", location.search);
 
-// URLSearchParams la separa en pares nombre → valor y decodifica las tildes y los espacios.
-// El modelo: un dato suelto, por su name
+// Crea un objeto para obtener los datos enviados por el formulario
 const parametros = new URLSearchParams(location.search);
 console.log("nombre =", parametros.get("nombre"));
 
-// TODO: escribe location.search en #consulta (o «(nada)» si está vacío).
+// Muestra la consulta completa en la página
 const consulta = document.querySelector("#consulta");
 consulta.textContent = location.search || "(nada)";
 
-// TODO: recorre los parámetros con for (const [campo, valor] of parametros) y añade a #datos una fila <tr>
-//       por par: un <th> con el campo y un <td> con el valor (textContent: son datos de fuera, nada de innerHTML).
+// Crea una fila de la tabla por cada dato recibido
 const tbody = document.querySelector("#datos");
 let hayDatos = false;
 
@@ -38,7 +37,7 @@ for (const [campo, valor] of parametros) {
   tbody.appendChild(fila);
 }
 
-// TODO: si no ha llegado ningún dato, muestra un aviso en la página.
+// Avisa al usuario si no llegaron datos en la URL
 const avisoVacio = document.querySelector("#avisoVacio");
 if (!hayDatos) {
   console.log("No se recibieron parámetros en la URL");

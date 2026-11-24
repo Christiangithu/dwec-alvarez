@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Datos generales de la página -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Inscripción · Christian</title>
 
+  <!-- Estilos y JavaScript -->
   <!-- CSS de Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Iconos de Bootstrap -->
@@ -14,7 +16,7 @@
 </head>
 <body>
 
-  <!-- NAVBAR con tu nombre -->
+  <!-- NAVBAR con nombre -->
   <nav class="navbar bg-primary" data-bs-theme="dark">
     <div class="container">
       <span class="navbar-brand"><i class="bi bi-person-circle"></i> Christian Alvarez</span>
@@ -22,7 +24,7 @@
     </div>
   </nav>
 
-  <!-- CABECERA -->
+  <!-- Cabecera de la página -->
   <header class="bg-body-tertiary border-bottom py-4 mb-4">
     <div class="container">
       <h1 class="h2 mb-1">Jornadas de Desarrollo Web 2026</h1>
@@ -30,20 +32,22 @@
     </div>
   </header>
 
+  <!-- Contenido principal -->
   <main class="container mb-5">
     <div class="row g-4">
 
-      <!-- EL FORMULARIO -->
+      <!-- Formulario de inscripción -->
       <div class="col-12 col-lg-7">
         <section class="card shadow-sm">
           <div class="card-body">
             <!-- Añade novalidate aquí al llegar al Ejercicio 4 -->
             <form id="inscripcion" action="recibido.html" method="get" novalidate>
 
+              <!-- Datos personales -->
               <fieldset class="mb-4">
                 <legend class="fs-5 border-bottom pb-1">Tus datos</legend>
 
-                <!-- Nombre y apellidos (Modelo) -->
+                <!-- Campo para escribir el nombre y los apellidos -->
                 <div class="mb-3">
                   <label for="nombre" class="form-label">Nombre y apellidos *</label>
                   <input type="text" id="nombre" name="nombre" class="form-control" autocomplete="name"
@@ -52,7 +56,7 @@
                   <div class="invalid-feedback"></div>
                 </div>
 
-                <!-- Correo y para repetir el correo -->
+                <!-- Dirección de correo y campo para comprobarla -->
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <label for="email" class="form-label">Correo electrónico *</label>
@@ -68,7 +72,7 @@
                   </div>
                 </div>
 
-                <!-- Teléfono y fecha de nacimiento -->
+                <!-- Datos opcionales o adicionales de contacto -->
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <label for="telefono" class="form-label">Teléfono (opcional)</label>
@@ -88,12 +92,12 @@
 
               </fieldset>
 
-              <!-- Para inscripción -->
+              <!-- Datos de la inscripción -->
               <fieldset class="mb-4">
                 <legend class="fs-5 border-bottom pb-1">Tu inscripción</legend>
 
                 <div class="row">
-                  <!-- Modalidad -->
+                  <!-- Elegir si se participa presencialmente o por internet -->
                   <div class="col-md-6 mb-3">
                     <label for="modalidad" class="form-label">Modalidad *</label>
                     <select id="modalidad" name="modalidad" class="form-select" required>
@@ -104,7 +108,7 @@
                     <div class="invalid-feedback"></div>
                   </div>
 
-                  <!-- Taller de la tarde -->
+                  <!-- Para elegir un taller -->
                   <div class="col-md-6 mb-3">
                     <span class="form-label d-block">Taller de la tarde *</span>
                     <div class="form-check">
@@ -123,7 +127,7 @@
                   </div>
                 </div>
 
-                <!-- JavaScript -->
+                <!-- Nivel de JavaScript -->
                 <div class="mb-3">
                   <label for="nivel" class="form-label">
                     Tu nivel de JavaScript: <output id="valorNivel" class="fw-bold">5</output> de 10
@@ -132,7 +136,7 @@
                   <div class="invalid-feedback"></div>
                 </div>
 
-                <!-- Comentarios -->
+                <!-- Comentarios adicionales y contador de caracteres -->
                 <div class="mb-3">
                   <label for="comentarios" class="form-label">¿Algo que debamos saber?</label>
                   <textarea class="form-control" id="comentarios" name="comentarios" rows="3" maxlength="200"></textarea>
@@ -140,7 +144,7 @@
                   <div class="invalid-feedback"></div>
                 </div>
 
-                <!-- Para las condiciones -->
+                <!-- Para aceptar las condiciones -->
                 <div class="mb-3">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="condiciones" name="condiciones" value="si" required>
@@ -151,7 +155,7 @@
 
               </fieldset>
 
-              <!-- Botones -->
+              <!-- Botones para enviar o borrar -->
               <div class="d-flex gap-2">
                 <button type="submit" class="btn btn-primary">
                   <i class="bi bi-check-lg"></i> Enviar inscripción
@@ -164,7 +168,8 @@
         </section>
       </div>
 
-      <!-- Para la tarjeta de resumen -->
+      <!-- Tarjeta de resumen -->
+      <!-- Muestra al usuario los datos que contiene el formulario -->
       <div class="col-12 col-lg-5">
         <aside class="card shadow-sm">
           <div class="card-body">
@@ -184,6 +189,7 @@
     </div>
   </main>
 
+  <!-- Pie de página -->
   <footer class="bg-body-tertiary border-top py-3">
     <div class="container small text-body-secondary">
       Christian Alvarez · DWEC 26/27 · Tarea 8 · Las capturas, la reflexión y las fuentes están en el README.

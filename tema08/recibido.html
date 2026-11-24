@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Datos generales de la página -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Inscripción recibida · Christian</title>
 
+  <!-- Estilos y JavaScript -->
   <!-- CSS de Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Iconos de Bootstrap -->
@@ -14,6 +16,7 @@
 </head>
 <body>
 
+  <!-- Barra superior -->
   <nav class="navbar bg-primary" data-bs-theme="dark">
     <div class="container">
       <span class="navbar-brand"><i class="bi bi-person-circle"></i> Christian Alvarez</span>
@@ -21,6 +24,7 @@
     </div>
   </nav>
 
+  <!-- Cabecera de la página -->
   <header class="bg-body-tertiary border-bottom py-4 mb-4">
     <div class="container">
       <h1 class="h2 mb-1">Inscripción recibida</h1>
@@ -28,22 +32,22 @@
     </div>
   </header>
 
+  <!-- Contenido principal -->
   <main class="container mb-5">
     <section class="card shadow-sm">
       <div class="card-body">
-        <!-- TODO (ejercicio 3):
-            · un párrafo #consulta donde se verá la parte de la URL que empieza por ?
-            · una tabla de Bootstrap con dos columnas, «Campo (name)» y «Valor», y el <tbody id="datos"> vacío
-            · un enlace «Volver al formulario» a index.html -->
+        <!-- Consulta enviada por el formulario en la URL -->
         <p class="mb-3">
           <strong>Cadena de consulta (<code>location.search</code>):</strong>
           <code id="consulta" class="d-block mt-1 p-2 bg-body-tertiary border rounded text-break"></code>
         </p>
 
+        <!-- Aviso que aparece si no hay datos en la URL -->
         <div id="avisoVacio" class="alert alert-warning d-none" role="alert">
           No ha llegado ningún dato en la URL. Rellena primero el formulario para ver los parámetros enviados.
         </div>
 
+        <!-- Tabla con los campos y valores recibidos -->
         <div class="table-responsive">
           <table class="table table-striped table-bordered align-middle">
             <thead class="table-light">
@@ -56,6 +60,7 @@
           </table>
         </div>
 
+        <!-- Enlace para volver al formulario -->
         <a href="index.html" class="btn btn-primary mt-2">
           <i class="bi bi-arrow-left"></i> Volver al formulario
         </a>
@@ -63,6 +68,7 @@
     </section>
   </main>
 
+  <!-- Pie de página -->
   <footer class="bg-body-tertiary border-top py-3">
     <div class="container small text-body-secondary">Christian Alvarez · DWEC 26/27 · Tarea 8</div>
   </footer>
